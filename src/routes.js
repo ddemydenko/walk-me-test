@@ -19,13 +19,10 @@ const productRoutes = [
     path: '/products/:id',
     handler: product.getById,
     noDataHandler: product.noDataHandler
-  },
-
+  }
 ];
 
 const initRoutes = ({ method, path, handler, noDataHandler }) => {
-
-
   const mainHandler = (req, res, next) => {
     const result = handler(req);
     result.then(data => {

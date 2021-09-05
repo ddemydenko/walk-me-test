@@ -2,13 +2,12 @@ const app = require('../src/server'); // Link to your server file
 const supertest = require('supertest');
 const request = supertest(app);
 
-describe('first test', () => {
+describe('Test endpoints', () => {
   test('Get customer by id', async () => {
     const response = await request.get('/customers/13');
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual({ 'age': '27', 'id': '13', 'name': 'Bob' });
-    return Promise.resolve();
   });
 
   test('customers/id endpoint should return 404 if customer not found', async () => {
@@ -41,5 +40,4 @@ describe('first test', () => {
       }
     });
   });
-
 });
