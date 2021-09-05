@@ -7,8 +7,5 @@ module.exports = {
   setupFiles: [
     './test/setup.js',
   ],
-  collectCoverageFrom: [
-    'src/**/*.{js}',
-  ],
   coverageReporters: ['text-summary', 'lcov']
 };
